@@ -5,7 +5,10 @@
   "private": true,
   "scripts": {
     "dev": "nodemon",
-    "build": "tsc"
+    "build": "tsc",
+    "db:migrate": "bunx --bun prisma migrate dev --name init",
+    "db:generate": "bunx --bun prisma generate",
+    "db:studio": "bunx --bun prisma studio --config ./prisma.config.ts"
   },
   "devDependencies": {
     "@types/bun": "latest",
