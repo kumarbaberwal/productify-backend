@@ -2,6 +2,9 @@ import express, { type Request, type Response } from "express";
 import { ENV } from "./config/env.ts";
 import { clerkMiddleware } from "@clerk/express";
 import cors from "cors"
+import userRoutes from "./routes/userRoutes.ts"
+import productRoutes from "./routes/userRoutes.ts"
+import commentRoutes from "./routes/userRoutes.ts"
 
 const app = express();
 
@@ -10,6 +13,11 @@ app.use(cors({ origin: ENV.CLIENT_API, credentials: true }));
 app.use(clerkMiddleware());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+
+app.use("/api/users", userRoutes);
+app.use("/api/products", productRoutes);
+app.use("/api/comments", commentRoutes);
 
 app.get("/", (req: Request, res: Response) => {
   res.status(200).json({
