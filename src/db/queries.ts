@@ -1,5 +1,5 @@
-import { Prisma } from "../../generated/prisma/client"
-import { prisma } from "../lib/prisma"
+import { Prisma } from "../../generated/prisma/client.ts"
+import { prisma } from "../lib/prisma.ts"
 
 
 // create user
@@ -41,7 +41,7 @@ export const upsertUser = async (data: Prisma.UserCreateInput) => {
 
 
 // create product 
-export const createProduct = async (data: Prisma.ProductCreateInput) => {
+export const createProduct = async (data: Prisma.ProductCreateInput | Prisma.ProductUncheckedCreateInput) => {
   return prisma.product.create({ data });
 }
 
