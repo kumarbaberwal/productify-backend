@@ -1,6 +1,6 @@
 import { requireAuth } from "@clerk/express";
 import { Router } from "express";
-import { createComment, deleteComment } from "../controllers/commentControllers";
+import { createComment, deleteComment } from "../controllers/commentControllers.ts";
 
 const router = Router();
 
