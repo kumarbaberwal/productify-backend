@@ -3,8 +3,8 @@ import { ENV } from "./config/env.ts";
 import { clerkMiddleware } from "@clerk/express";
 import cors from "cors"
 import userRoutes from "./routes/userRoutes.ts"
-import productRoutes from "./routes/userRoutes.ts"
-import commentRoutes from "./routes/userRoutes.ts"
+import productRoutes from "./routes/productRoutes.ts"
+import commentRoutes from "./routes/commentRoutes.ts"
 
 const app = express();
 
